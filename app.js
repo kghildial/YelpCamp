@@ -23,7 +23,7 @@ app.get('/campgrounds', function(req, res){
     }
   ]
 
-  res.render('campgrounds');
+  res.render('campgrounds', {campgrounds: campgrounds});
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
