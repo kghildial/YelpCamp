@@ -15,19 +15,19 @@ var campgroundSchema = new mongoose.Schema({
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 
-Campground.create(
-  {
-    name: "Hills Camp",
-    image: "https://images.pexels.com/photos/14287/pexels-photo-14287.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
-  }, function(err, campground){
-    if(err){
-      console.log(err);
-    }
-    else{
-      console.log("Newly created campground:")
-      console.log(campground);
-    }
-  });
+// Campground.create(
+//   {
+//     name: "Hills Camp",
+//     image: "https://images.pexels.com/photos/14287/pexels-photo-14287.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
+//   }, function(err, campground){
+//     if(err){
+//       console.log(err);
+//     }
+//     else{
+//       console.log("Newly created campground:")
+//       console.log(campground);
+//     }
+//   });
 
 //landing page
 app.get('/', function(req, res){
@@ -36,7 +36,14 @@ app.get('/', function(req, res){
 
 //campgrounds page
 app.get('/campgrounds', function(req, res){
-  res.render('campgrounds', {campgrounds: campgrounds});
+  Campground.find({}, function(err, allCampgrounds){
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.render('campgrounds', {campgrounds: allCampgrounds});
+    }
+  });
 });
 
 //campgrounds page with added campground
