@@ -3,10 +3,12 @@ var app = express();
 
 app.set('view engine', 'ejs');
 
+//landing page
 app.get('/', function(req, res){
   res.render('landing');
 });
 
+//campgrounds page
 app.get('/campgrounds', function(req, res){
   var campgrounds = [
     {
@@ -24,6 +26,11 @@ app.get('/campgrounds', function(req, res){
   ]
 
   res.render('campgrounds', {campgrounds: campgrounds});
+});
+
+//campgrounds post route
+app.post('/campgrounds', function(req, res){
+  res.send("You hit the post route!");
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
