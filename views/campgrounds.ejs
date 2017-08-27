@@ -1,13 +1,18 @@
 <% include ./partials/header %>
 
-<h1>This is the campgrounds page!</h1>
+<div class="container">
+  <header class='jumbotron'>
+    <h1 class='display-3'>This is the campgrounds page!</h1>
+  </header>
 
-<a href="/campgrounds/new">Add New Campground</a>
-<% campgrounds.forEach(function(campground){ %>
-  <div>
+
+  <a href="/campgrounds/new">Add New Campground</a>
+  <% campgrounds.forEach(function(campground){ %>
+    <div>
     <h4><%= campground.name %></h4>
     <img src="<%= campground.image %>">
-  </div>
-<% }); %>
+    </div>
+    <% }); %>
+</div>
 
 <% include ./partials/footer %>
