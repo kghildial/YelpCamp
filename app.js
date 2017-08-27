@@ -15,6 +15,20 @@ var campgroundSchema = new mongoose.Schema({
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 
+Campground.create(
+  {
+    name: "Hills Camp",
+    image: "https://images.pexels.com/photos/14287/pexels-photo-14287.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
+  }, function(err, campground){
+    if(err){
+      console.log(err);
+    }
+    else{
+      console.log("Newly created campground:")
+      console.log(campground);
+    }
+  });
+
 var campgrounds = [
   {
     name: "Woods Camp",
