@@ -30,9 +30,14 @@ app.get('/campgrounds', function(req, res){
   res.render('campgrounds', {campgrounds: campgrounds});
 });
 
-//campgrounds post route
+//campgrounds page with added campground
 app.post('/campgrounds', function(req, res){
   res.send("You hit the post route!");
+});
+
+//new campground form page
+app.get('/campgrounds/new', function(req, res){
+  res.render('new');
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
