@@ -16,20 +16,20 @@ var campgroundSchema = new mongoose.Schema({
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 
-Campground.create(
-  {
-    name: "Hills Camp",
-    image: "https://images.pexels.com/photos/14287/pexels-photo-14287.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
-    description: "This is a great campground with a beautiful hillside view."
-  }, function(err, campground){
-    if(err){
-      console.log(err);
-    }
-    else{
-      console.log("Newly created campground:")
-      console.log(campground);
-    }
-  });
+// Campground.create(
+//   {
+//     name: "Hills Camp",
+//     image: "https://images.pexels.com/photos/14287/pexels-photo-14287.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+//     description: "This is a great campground with a beautiful hillside view."
+//   }, function(err, campground){
+//     if(err){
+//       console.log(err);
+//     }
+//     else{
+//       console.log("Newly created campground:")
+//       console.log(campground);
+//     }
+//   });
 
 //landing page
 app.get('/', function(req, res){
@@ -71,7 +71,7 @@ app.get('/campgrounds/new', function(req, res){
 
 //show route: show info about selected campground
 app.get('/campgrounds/:id', function(req, res){
-  res.send("Show page!");
+  res.render('show');
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
