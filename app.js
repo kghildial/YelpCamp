@@ -34,7 +34,7 @@ app.get('/', function(req, res){
   res.render('landing');
 });
 
-//campgrounds page
+//index route: campgrounds page
 app.get('/campgrounds', function(req, res){
   Campground.find({}, function(err, allCampgrounds){
     if(err){
@@ -46,7 +46,7 @@ app.get('/campgrounds', function(req, res){
   });
 });
 
-//campgrounds page with added campground
+//create route: campgrounds page with added campground
 app.post('/campgrounds', function(req, res){
   var name = req.body.name;
   var image = req.body.image;
@@ -62,7 +62,7 @@ app.post('/campgrounds', function(req, res){
   })
 });
 
-//new campground form page
+//new route: new campground form page
 app.get('/campgrounds/new', function(req, res){
   res.render('new');
 });
