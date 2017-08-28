@@ -67,6 +67,11 @@ app.get('/campgrounds/new', function(req, res){
   res.render('new');
 });
 
+//show route: show info about selected campground
+app.get('/campgrounds/:id', function(req, res){
+  res.send("Show page!");
+});
+
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
   console.log("Server Started...");
 });
