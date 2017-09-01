@@ -20,7 +20,7 @@ var Campground = mongoose.model("Campground", campgroundSchema);
 //   {
 //     name: "Hills Camp",
 //     image: "https://images.pexels.com/photos/14287/pexels-photo-14287.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
-//     description: "This is a great campground with a beautiful hillside view."
+//     description: "This is a great campground with a beautiful hillside vie"
 //   }, function(err, campground){
 //     if(err){
 //       console.log(err);
@@ -71,11 +71,16 @@ app.get('/campgrounds/new', function(req, res){
 
 //show route: show info about selected campground
 app.get('/campgrounds/:id', function(req, res){
-  Campground.FindByID(req.params.id function(err, foundCampground){
+  Campground.findById(req.params.id, function(err, foundCampground){
     if(err){
       console.log(err);
     }
     else{
       res.render('show', {campground: foundCampground});
     }
+  });
+});
+
+app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
+  console.log("Server Started...");
 });
