@@ -71,9 +71,11 @@ app.get('/campgrounds/new', function(req, res){
 
 //show route: show info about selected campground
 app.get('/campgrounds/:id', function(req, res){
-  res.render('show');
-});
-
-app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
-  console.log("Server Started...");
+  Campground.FindByID(req.params.id function(err, foundCampground){
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.render('show', {campground: foundCampground});
+    }
 });
