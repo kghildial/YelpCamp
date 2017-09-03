@@ -10,21 +10,6 @@ mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
-// Campground.create(
-//   {
-//     name: "Hills Camp",
-//     image: "https://images.pexels.com/photos/14287/pexels-photo-14287.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
-//     description: "This is a great campground with a beautiful hillside vie"
-//   }, function(err, campground){
-//     if(err){
-//       console.log(err);
-//     }
-//     else{
-//       console.log("Newly created campground:")
-//       console.log(campground);
-//     }
-//   });
-
 //landing page
 app.get('/', function(req, res){
   res.render('landing');
@@ -66,7 +51,7 @@ app.get('/campgrounds/new', function(req, res){
 
 //show route: show info about selected campground
 app.get('/campgrounds/:id', function(req, res){
-  Campground.findById(req.params.id, function(err, foundCampground){
+  Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
     if(err){
       console.log(err);
     }
