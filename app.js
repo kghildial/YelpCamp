@@ -61,6 +61,12 @@ app.get('/campgrounds/:id', function(req, res){
   });
 });
 
+//Comment Routes
+
+app.get('/campgrounds/:id/comments/new', function(req, res){
+  res.send("This will be the comment form!");
+});
+
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
   console.log("Server Started...");
 });
