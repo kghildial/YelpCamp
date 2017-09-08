@@ -22,7 +22,7 @@ app.get('/campgrounds', function(req, res){
       console.log(err);
     }
     else{
-      res.render('index', {campgrounds: allCampgrounds});
+      res.render('campgrounds/index', {campgrounds: allCampgrounds});
     }
   });
 });
@@ -46,7 +46,7 @@ app.post('/campgrounds', function(req, res){
 
 //new route: new campground form page
 app.get('/campgrounds/new', function(req, res){
-  res.render('new');
+  res.render('campgrounds/new');
 });
 
 //show route: show info about selected campground
@@ -56,7 +56,7 @@ app.get('/campgrounds/:id', function(req, res){
       console.log(err);
     }
     else{
-      res.render('show', {campground: foundCampground});
+      res.render('campgrounds/show', {campground: foundCampground});
     }
   });
 });
@@ -64,7 +64,14 @@ app.get('/campgrounds/:id', function(req, res){
 //Comment Routes
 
 app.get('/campgrounds/:id/comments/new', function(req, res){
-  res.send("This will be the comment form!");
+  Campground.findById(req.params.id, function(err, campground){
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.render('comments/new', {campground: campground});
+    }
+  });
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
