@@ -142,8 +142,11 @@ app.get("/login", function(req, res){
 });
 
 // handle login logic
-app.post("/login", function(req, res){
-  res.send("Logging you in...");
+app.post("/login", passport.authenticate("local", //authenticate middleware setup in passport config
+  {
+    successRedirect: "/campgrounds",
+    failureRedirect: "/login"
+  }), function(req, res){
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
