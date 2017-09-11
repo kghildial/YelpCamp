@@ -15,6 +15,19 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
 
+//passport config
+app.use(require("express-session")({
+  secret: "This is the encoding phrase!",
+  resave: false,
+  saveuninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate())); //.authnicate method comes with passport-local-mongoose
+passport.serializeUser(User.serializeUser()); // from passport-local-mongoose
+passport.deserializeUser(User.deserializeUser()); //from passport-local-mongoose
+
 //landing page
 app.get('/', function(req, res){
   res.render('landing');

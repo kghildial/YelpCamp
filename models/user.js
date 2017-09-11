@@ -6,7 +6,7 @@ var UserSchema = new mongoose.Schema({
   password: String
 });
 
-//adds in middleware methods to the User
+//adds in middleware methods to the User (such as .authenticate, .serialize, .deserialize)
 UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("User", UserSchema);
