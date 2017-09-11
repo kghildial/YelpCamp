@@ -113,6 +113,13 @@ app.post("/campgrounds/:id/comments", function(req, res){
   });
 });
 
+// auth routes
+
+//show the register form
+app.get("/register", function(req, res){
+  res.render("register");
+});
+
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
   console.log("Server Started...");
 });
