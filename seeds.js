@@ -6,17 +6,17 @@ var data = [
   {
     name: "Woods Camp",
     image: "https://images.pexels.com/photos/6714/light-forest-trees-morning.jpg?w=940&h=650&auto=compress&cs=tinysrgb",
-    description: "Great woods camp!!!"
+    description: "Vestibulum ante dui, euismod in nibh et, sodales cursus dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus interdum risus sed dui facilisis malesuada. Praesent a facilisis metus. Nam quis bibendum nisl. Sed sed dui laoreet, lobortis lectus vitae, fringilla libero. Donec a tristique ante, eget viverra ipsum. Maecenas ligula tortor, lobortis et faucibus sit amet, malesuada et tellus. Vestibulum ornare vitae purus ut auctor. Fusce ullamcorper, velit in elementum bibendum, tellus dolor fermentum felis, ut malesuada risus massa vitae ligula. Fusce vestibulum mi diam, non pretium erat interdum nec. Mauris eu massa lobortis, sodales mi nec, mollis diam. Morbi fringilla leo vel purus dapibus molestie. Ut ultrices, neque vel fringilla iaculis, erat ex molestie mauris, eu varius dui velit sit amet neque. Phasellus at orci nec ipsum bibendum malesuada."
   },
   {
     name: "Hills Camp",
     image: "https://images.pexels.com/photos/14287/pexels-photo-14287.jpeg?h=350&auto=compress&cs=tinysrgb",
-    description: "Description!!!"
+    description: "Vestibulum ante dui, euismod in nibh et, sodales cursus dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus interdum risus sed dui facilisis malesuada. Praesent a facilisis metus. Nam quis bibendum nisl. Sed sed dui laoreet, lobortis lectus vitae, fringilla libero. Donec a tristique ante, eget viverra ipsum. Maecenas ligula tortor, lobortis et faucibus sit amet, malesuada et tellus. Vestibulum ornare vitae purus ut auctor. Fusce ullamcorper, velit in elementum bibendum, tellus dolor fermentum felis, ut malesuada risus massa vitae ligula. Fusce vestibulum mi diam, non pretium erat interdum nec. Mauris eu massa lobortis, sodales mi nec, mollis diam. Morbi fringilla leo vel purus dapibus molestie. Ut ultrices, neque vel fringilla iaculis, erat ex molestie mauris, eu varius dui velit sit amet neque. Phasellus at orci nec ipsum bibendum malesuada."
   },
   {
     name: "Desert Camp",
     image: "https://images.pexels.com/photos/260593/pexels-photo-260593.jpeg?h=350&auto=compress&cs=tinysrgb",
-    description: "Desert Camp!!!"
+    description: "Vestibulum ante dui, euismod in nibh et, sodales cursus dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus interdum risus sed dui facilisis malesuada. Praesent a facilisis metus. Nam quis bibendum nisl. Sed sed dui laoreet, lobortis lectus vitae, fringilla libero. Donec a tristique ante, eget viverra ipsum. Maecenas ligula tortor, lobortis et faucibus sit amet, malesuada et tellus. Vestibulum ornare vitae purus ut auctor. Fusce ullamcorper, velit in elementum bibendum, tellus dolor fermentum felis, ut malesuada risus massa vitae ligula. Fusce vestibulum mi diam, non pretium erat interdum nec. Mauris eu massa lobortis, sodales mi nec, mollis diam. Morbi fringilla leo vel purus dapibus molestie. Ut ultrices, neque vel fringilla iaculis, erat ex molestie mauris, eu varius dui velit sit amet neque. Phasellus at orci nec ipsum bibendum malesuada."
   }
 ]
 
