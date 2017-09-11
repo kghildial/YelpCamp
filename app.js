@@ -141,6 +141,11 @@ app.get("/login", function(req, res){
   res.render("login");
 });
 
+// handle login logic
+app.post("/login", function(req, res){
+  res.send("Logging you in...");
+});
+
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
   console.log("Server Started...");
 });
