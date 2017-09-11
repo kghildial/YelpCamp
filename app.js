@@ -149,6 +149,12 @@ app.post("/login", passport.authenticate("local", //authenticate middleware setu
   }), function(req, res){
 });
 
+//logout route
+app.get("/logout", function(req, res){
+  req.logout();
+  res.redirect("/campgrounds");
+});
+
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
   console.log("Server Started...");
 });
