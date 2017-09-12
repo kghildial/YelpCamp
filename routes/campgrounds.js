@@ -1,7 +1,7 @@
 var express = require("express");
 var Campground = require("../models/campground");
 
-var router = express.Router();
+var router = express.Router({mergeParams: true});
 
 //index route: campgrounds page
 router.get('/', function(req, res){

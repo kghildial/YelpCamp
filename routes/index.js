@@ -1,7 +1,7 @@
 var express = require("express");
 var passport = require("passport");
 var User = require("../models/user");
-var router = express.Router();
+var router = express.Router({mergeParams: true});
 
 //root route: landing page
 router.get('/', function(req, res){

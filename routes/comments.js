@@ -2,7 +2,7 @@ var express = require("express");
 var Campground = require("../models/campground");
 var Comment = require("../models/comment");
 
-var router = express.Router();
+var router = express.Router({mergeParams: true});
 
 //Comment Routes
 
