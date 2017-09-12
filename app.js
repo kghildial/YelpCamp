@@ -28,6 +28,11 @@ passport.use(new LocalStrategy(User.authenticate())); //.authnicate method comes
 passport.serializeUser(User.serializeUser()); // from passport-local-mongoose
 passport.deserializeUser(User.deserializeUser()); //from passport-local-mongoose
 
+//middleware to use currentUser: will come after passprt config
+app.use(function(req, res, next){
+  res.locals.currentUser = req.user;  // currentUser is an arbitrary name, res.locals holds anything that is made to be available inside the template
+  next();
+});
 //landing page
 app.get('/', function(req, res){
   res.render('landing');
