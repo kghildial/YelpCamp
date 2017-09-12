@@ -41,8 +41,8 @@ app.use(function(req, res, next){
 
 //using the routes
 app.use(indexRoutes);
-app.use(commentRoutes);
-app.use(campgroundRoutes);
+app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/campgrounds", campgroundRoutes);
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
   console.log("Server Started...");
