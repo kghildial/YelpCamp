@@ -6,6 +6,7 @@ var router = express.Router({mergeParams: true});
 
 //Comment Routes
 
+//new comment
 router.get('/new', isLoggedIn, function(req, res){
   Campground.findById(req.params.id, function(err, campground){
     if(err){
@@ -17,6 +18,7 @@ router.get('/new', isLoggedIn, function(req, res){
   });
 });
 
+//create comment
 router.post("/", function(req, res){
   Campground.findById(req.params.id, function(err, campground){
     if(err){
