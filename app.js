@@ -81,7 +81,7 @@ app.get('/campgrounds/:id', function(req, res){
 
 //Comment Routes
 
-app.get('/campgrounds/:id/comments/new', function(req, res){
+app.get('/campgrounds/:id/comments/new', isLoggedIn, function(req, res){
   Campground.findById(req.params.id, function(err, campground){
     if(err){
       console.log(err);
@@ -154,6 +154,16 @@ app.get("/logout", function(req, res){
   req.logout();
   res.redirect("/campgrounds");
 });
+
+//check user logged in middleware
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  else {
+    res.redirect("/login");
+  }
+}
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(req, res){
   console.log("Server Started...");
