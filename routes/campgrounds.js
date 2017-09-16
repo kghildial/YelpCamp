@@ -55,14 +55,27 @@ router.get('/:id', function(req, res){
 
 //edit campground route
 router.get("/:id/edit", function(req, res){
-  Campground.findById(req.params.id, function(err, foundCampground){
-    if(err){
-      res.redirect("/campgrounds");
-    }
-    else{
-      res.render("campgrounds/edit", {campground: foundCampground});
-    }
-  });
+  // is user logged in?
+  if(req.isAuthenticated()){
+    Campground.findById(req.params.id, function(err, foundCampground){
+      if(err){
+        res.redirect("/campgrounds");
+      }
+      else{
+        //does user own campground?
+        //foundCampground.author.object is a mongoose object and req,params.id is a string
+        if(foundCampground.author.id.equals(req.user._id)){ // equals is a mongoose method
+          res.render("campgrounds/edit", {campground: foundCampground});
+        }
+        else{
+          res.send("Access Denied!");
+        }
+      }
+    });
+  }
+  else{
+    res.send("You need to be logged in to do that!");
+  }
 });
 
 //update campground route: put route
