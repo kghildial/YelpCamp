@@ -76,6 +76,12 @@ router.put("/:id", function(req, res){
     }
   });
 });
+
+//destroy campground route
+router.delete("/:id", function(req, res){
+  res.send("Deleting Campground...");
+});
+
 //check user logged in middleware
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
