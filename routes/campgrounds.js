@@ -53,6 +53,13 @@ router.get('/:id', function(req, res){
   });
 });
 
+//edit campground route
+router.get("/:id/edit", function(req, res){
+  res.render("campgrounds/edit");
+});
+
+//update campground route
+
 //check user logged in middleware
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
