@@ -94,7 +94,7 @@ function isLoggedIn(req, res, next){
   }
 }
 
-//middleware:
+//middleware: for user auth
 function checkCampgroundOwnership(req, res, next){
   // is user logged in?
   if(req.isAuthenticated()){
