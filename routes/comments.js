@@ -23,7 +23,7 @@ router.post("/", function(req, res){
   Campground.findById(req.params.id, function(err, campground){
     if(err){
       console.log(err);
-      redirect("/campgrounds");
+      res.redirect("/campgrounds");
     }
     else {
       Comment.create(req.body.comment, function(err, comment){
@@ -40,7 +40,7 @@ router.post("/", function(req, res){
           campground.save();
           res.redirect('/campgrounds/' + campground._id);
         }
-      })
+      });
     }
   });
 });
