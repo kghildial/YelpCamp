@@ -103,7 +103,8 @@ function checkCampgroundOwnership(req, res, next){
         res.redirect("back");
       }
       else{
-        //foundCampground.author.object is a mongoose object and req,params.id is a string
+        //does the user own the campground ?
+        //foundCampground.author.object is a mongoose object and req.params.id is a string
         if(foundCampground.author.id.equals(req.user._id)){ // equals is a mongoose method
           next();
         }
