@@ -8,7 +8,8 @@ var express         = require('express'),
     passport        = require("passport"),
     LocalStrategy   = require("passport-local"),
     User            = require("./models/user"),
-    methodOverride  = require("method-override");
+    methodOverride  = require("method-override"),
+    flash           = require("connect-flash");
 
 //requiring route files
 var commentRoutes     = require("./routes/comments"),
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
+app.use(flash()); //must come before passport config
 
 //passport config
 app.use(require("express-session")({
@@ -38,6 +40,8 @@ passport.deserializeUser(User.deserializeUser()); //from passport-local-mongoose
 //middleware to use currentUser: will come after passprt config
 app.use(function(req, res, next){
   res.locals.currentUser = req.user;  // currentUser is an arbitrary name, res.locals holds anything that is made to be available inside the template
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
   next();
 });
 

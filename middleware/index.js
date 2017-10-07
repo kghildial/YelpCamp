@@ -11,7 +11,8 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next){
   if(req.isAuthenticated()){
     Campground.findById(req.params.id, function(err, foundCampground){
       if(err){
-        res.redirect("back");
+        req.flash("error", "Something went wrong. Please try again in a few minutes.");
+        res.redirect("/campgrounds/" + req.params.id);
       }
       else{
         //does the user own the campground ?
@@ -20,13 +21,15 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next){
           next();
         }
         else{
-          res.redirect("back");
+          req.flash("error", "Permission Denied!");
+          res.redirect("/campgrounds/" + req.params.id);
         }
       }
     });
   }
   else{
-    res.redirect("back");
+    req.flash("error", "Permission Denied. Please Login First!")
+    res.redirect("/campgrounds/" + req.params.id);
   }
 }
 
@@ -36,7 +39,8 @@ middlewareObj.checkCommentOwnership = function(req, res, next){
   if(req.isAuthenticated()){
     Comment.findById(req.params.comment_id, function(err, foundComment){
       if(err){
-        res.redirect("back");
+        req.flash("error", "Something went wrong. Please try again in a few minutes.");
+        res.redirect("/campgrounds/" + req.params.id);
       }
       else{
         //does the user own the comment ?
@@ -45,13 +49,15 @@ middlewareObj.checkCommentOwnership = function(req, res, next){
           next();
         }
         else{
-          res.redirect("back");
+          req.flash("error", "Permission Denied!");
+          res.redirect("/campgrounds/" + req.params.id);
         }
       }
     });
   }
   else{
-    res.redirect("back");
+    req.flash("error", "Permission Denied. Please Login First!")
+    res.redirect("/campgrounds/" + req.params.id);
   }
 }
 
@@ -61,6 +67,7 @@ middlewareObj.isLoggedIn = function(req, res, next){
     return next();
   }
   else {
+    req.flash("error", "Please Login First!");
     res.redirect("/login");
   }
 }
