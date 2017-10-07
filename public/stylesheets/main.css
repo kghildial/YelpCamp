@@ -1,3 +1,18 @@
+body{
+  margin-top: 100px;
+}
+
+.jumbotron{
+  background-image: url("https://images.pexels.com/photos/79051/fire-light-79051.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.glyphicon{
+  margin-right: 5px;
+}
+
 .thumbnail img{
   width: 100%;
 }
