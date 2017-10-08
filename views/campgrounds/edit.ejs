@@ -1,10 +1,9 @@
 <% include ../partials/header %>
 
 <div class="container">
-  <h1 style="text-align: center;">Edit <%= campground.name %></h1>
+  <h1 class="heading">Edit <%= campground.name %></h1>
 
-  <div style="width: 35%; margin: 30px auto;">
-    <form action="/campgrounds/<%= campground._id %>?_method=put" method="post">
+    <form class="form" action="/campgrounds/<%= campground._id %>?_method=put" method="post">
       <div class="form-group">
         <input class="form-control" type="text" name="campground[name]" placeholder="name" value="<%= campground.name %>">
       </div>
@@ -17,9 +16,8 @@
       <div class="form-group">
         <button class="btn btn-lg btn-primary btn-block">Submit!</button>
       </div>
+      <a href="/campgrounds/<%= campground._id %>">Go Back</a>
     </form>
-    <a href="/campgrounds">Go Back</a>
-  </div>
 </div>
 
 
