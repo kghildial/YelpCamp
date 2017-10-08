@@ -25,6 +25,16 @@ body{
   padding: 9px;
 }
 
+.heading{
+  text-align: center;
+}
+
+.form{
+  width: 40vw;
+  max-width: 60%;
+  margin: 30px auto;
+}
+
 .delete-form{
   display: inline;
 }
