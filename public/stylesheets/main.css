@@ -1,5 +1,6 @@
 body{
   margin-top: 100px;
+  font-family: 'Lato', 'sans-serif';
 }
 
 .jumbotron{
@@ -7,6 +8,10 @@ body{
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#sub-jumbo{
+  font-weight: 400;
 }
 
 .glyphicon{
