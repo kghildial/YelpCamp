@@ -1,5 +1,7 @@
 # YelpCamp
 
+![](http://www.kinshukghildial.com/assets/images/yelp-camp.png)
+
 This is a personal project that I made while learning Web Development.
 
 This site is made for sharing and creating campgrounds. Its uses Node.js and MongoDB.
